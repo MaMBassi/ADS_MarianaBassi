@@ -36,7 +36,13 @@ public class CarroBuilder {
 		
 		int numeroDePortas = carro.getPortas().length;
 		if(numeroDePortas != 2 && numeroDePortas != 4) {
-			throw new IllegalStateException("Numero de portas invalido: "+numeroDePortas);
+			throw new IllegalStateException("Numero de portas invalido: " + numeroDePortas);
+		}
+	}
+	
+	private void validarMotor() {
+		if(carro.getMotor() == null) {
+			throw new IllegalStateException("Nenhum motor foi adicionado");
 		}
 	}
 	
