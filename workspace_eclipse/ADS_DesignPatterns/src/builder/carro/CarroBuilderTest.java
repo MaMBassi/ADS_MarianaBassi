@@ -8,20 +8,20 @@ class CarroBuilderTest {
 
 	@Test
 	void deveConstruirUmCarroPeloBuilder() {
-		//partes
+		//partes validas
 		Porta portaMotorista = new Porta();
 		Porta portaPassageiro = new Porta();
 		Porta[] portas = {portaMotorista,portaPassageiro};
 		Motor motorVTEC = new Motor();
-		ComputadorBordo computadorSiemens = new ComputadorBordo();
-		FreioABS freioBosh = new FreioABS();
+		ComputadorBordo computadorBordoSiemens = new ComputadorBordo();
+		FreioABS freioBosch = new FreioABS();
 		
 		//builder
 		CarroBuilder carroBuilder = new CarroBuilder();
 		carroBuilder.buildPortas(portas);
 		carroBuilder.buildMotor(motorVTEC);
-		carroBuilder.buildComputadorBordo(computadorSiemens);
-		carroBuilder.buildFreioABS(freioBosh);
+		carroBuilder.buildComputadorBordo(computadorBordoSiemens);
+		carroBuilder.buildFreioABS(freioBosch);
 		
 		//testa o carro construido
 		Carro carroConstruido = carroBuilder.getCarro();
@@ -30,6 +30,7 @@ class CarroBuilderTest {
 		assertNotNull(carroConstruido.getMotor());
 		assertNotNull(carroConstruido.getComputadorBordo());
 		assertNotNull(carroConstruido.getFreioABS());
+		assertEquals(carroConstruido.getPortas().length, 2);
 	}
 
 }
