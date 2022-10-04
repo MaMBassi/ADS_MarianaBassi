@@ -26,6 +26,7 @@ public class CarroBuilder {
 
 	public Carro getCarro() {
 		validarPortas();
+		validarMotor();
 		return carro;
 	}
 
