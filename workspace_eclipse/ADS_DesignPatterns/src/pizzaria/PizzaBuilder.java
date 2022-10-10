@@ -40,7 +40,7 @@ public class PizzaBuilder {
 		Integer tamanhoPizza = pizza.getSize();
 		
 		if(tamanhoPizza < 1 || tamanhoPizza > 3) {
-			throw new IllegalStateException("Tamanho da pizza invalido: ");
+			throw new IllegalStateException("Tamanho da pizza invalido: "+tamanhoPizza);
 		}
 	}
 
