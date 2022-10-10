@@ -21,5 +21,34 @@ class PizzaBuilderTest {
 		assertTrue(pizza.getFlagPepperoni());		
 		
 	}
+	@Test
+	void deveInvalidarPizzaComTamanhoErrado(){
+		try{
+			Pizza pizza = new PizzaBuilder()
+			.setSize(8)
+			.addCheese()
+			.addPepperoni()
+			.getPizza();
+
+			fail("Devia ter lançado exception");
+
+		}catch (IllegalStateException e){
+			e.printStackTrace();
+		}
+	}
+
+	@Test
+	void deveInvalidarPizzaSemIngrediente(){
+		try{
+			Pizza pizza = new PizzaBuilder()
+			.setSize(2)
+			.getPizza();
+
+			fail("Devia ter lançado exception");
+			
+		}catch (IllegalStateException e){
+			e.printStackTrace();
+		}
+	}
 
 }
