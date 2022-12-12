@@ -1,0 +1,28 @@
+package templatemethod.relatorio.intro;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class GeradorRelatorioTemplateTest {
+
+	@Test
+	void deveGerarRelatorioVendasMensaisPeloTemplate() {
+		GeradorRelatorioTemplate template = new GeradorRelatorioVendasMensais(2022,10);
+		String pagina = template.criarPagina();
+		System.out.println(pagina);
+	}
+	@Test
+	void deveGerarRelatorioVendasAnuaisPeloTemplate() {
+		GeradorRelatorioTemplate template = new GeradorRelatorioVendasAnuais(2022);
+		String pagina = template.criarPagina();
+		System.out.println(pagina);
+	}
+	@Test
+	void deveGerarRelatorioVendasSemestraisPeloTemplate() {
+		GeradorRelatorioTemplate template = new GeradorRelatorioVendasSemestrais(2);
+		String pagina = template.criarPagina();
+		System.out.println(pagina);
+	}
+
+}
